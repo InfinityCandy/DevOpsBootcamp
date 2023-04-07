@@ -1,0 +1,9 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: ./
+    image: infinitycandy/capstoneproject
+    container_name: capstoneproject
+    ports:
+      - "3000:3000"

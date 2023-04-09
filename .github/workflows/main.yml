@@ -13,13 +13,16 @@ jobs:
     - name: Set up GitHub actions
       uses: actions/checkout@v3
 
-    - name: Install NPM
-      run: sudo apt install npm
-
-    - name: Run Tests
+    - name: Install Node
+      run: sudo apt install node
+      
+    - name: Run NPM install
       run: |
         cd hello-world
-        npm test
+        npm install
+
+    - name: Run Tests
+      run: npm test
 
   build:
     needs: [test]
@@ -28,10 +31,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install NPM
-      run: sudo apt install npm
+    - name: Install Node
+      run: sudo apt install node
       
-    - name: Run Build
+    - name: Run NPM install
       run: |
         cd hello-world
-        npm start
+        npm install
+      
+    - name: Run Build
+      run: npm start

@@ -28,24 +28,12 @@ jobs:
 
   build:
     needs: [test]
-    name: Application Build
+    name: Container Build
     
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up GitHub actions
-      uses: actions/checkout@v3
-      
-      
-    - name: Install Node
-      run: sudo apt install nodejs
-      
-    - name: Run NPM install
+    - name: Build Docker Container
       run: |
         cd hello-world
-        npm install
-      
-    - name: Run Build
-      run: |
-        cd hello-world
-        docker-compose up
+        docker build -t infinitycandy/capstoneproject .

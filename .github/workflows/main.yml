@@ -47,6 +47,5 @@ jobs:
       
     - name: Run Build
       run: |
-        ls
         cd hello-world
-        npm start
+        docker-compose up

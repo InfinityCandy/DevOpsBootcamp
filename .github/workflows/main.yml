@@ -37,11 +37,7 @@ jobs:
       run: sudo apt install nodejs
       
     - name: Run NPM install
-      run: |
-        cd hello-world
-        npm install
+      run: npm install
       
     - name: Run Build
-      run: |
-        cd hello-world
-        npm start
+      run: npm start

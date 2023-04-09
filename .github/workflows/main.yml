@@ -33,6 +33,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set up GitHub actions
+      # We need to set the GitHub actions version to be able to move in the directories of our repository
+      uses: actions/checkout@v3
+      
     - name: Build Docker Container
       run: |
         cd hello-world

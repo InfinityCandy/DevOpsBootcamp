@@ -1,9 +1,19 @@
 version: "3"
 services:
-  backend:
+  controller:
     build:
-      context: ./
-    image: infinitycandy/capstoneproject
-    container_name: capstoneproject
+      context: ./controller/container_files
+    image: infinitycandy/capstoneproject_controller
+    container_name: capstoneproject_controller
+    volumes:
+      - type: bind
+        source: ./controller/ansible_files
+        target: /home/ansible_controller/ansible_files
+
+  target:
+    build:
+      context: ./target
+    image: infinitycandy/capstoneproject_target
+    container_name: capstoneproject_target
     ports:
       - "3000:3000"

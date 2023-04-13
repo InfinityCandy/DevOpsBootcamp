@@ -1,0 +1,14 @@
+- name: Check Connectivity
+  hosts: capstoneproject
+  become: yes
+  remote_user: ansible_controller
+  tasks:
+    - name: Check connectivity
+      ping:
+
+    - name: Change NodeJS APP text
+      lineinfile:
+        path: /usr/src/app/src/App.js
+        regexp: "Hello World!"
+        line: "Hello DevOps!"
+        state: present

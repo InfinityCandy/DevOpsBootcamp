@@ -18,12 +18,12 @@ jobs:
       
     - name: Run NPM install
       run: |
-        cd hello-world
+        cd hello-world/target
         npm install
 
     - name: Run Tests
       run: |
-        cd hello-world
+        cd hello-world/target
         npm test
 
   build:
@@ -39,5 +39,5 @@ jobs:
       
     - name: Build Docker Container
       run: |
-        cd hello-world
+        cd hello-world/target
         docker build -t infinitycandy/capstoneproject .
